@@ -1,7 +1,3 @@
-// ============================================================
-// TareaEntity.kt — Entidad Room (Data Layer)
-// Mapeada directamente a la tabla SQLite
-// ============================================================
 package com.example.gestortareaspro.data.local
 
 import androidx.room.ColumnInfo
@@ -24,16 +20,14 @@ data class TareaEntity(
     @ColumnInfo(name = "completada")
     val completada: Boolean = false
 ) {
-    /** Convierte la entidad Room al modelo de dominio. */
-    fun aModelo(): Tarea = Tarea(
+        fun aModelo(): Tarea = Tarea(
         id = id,
         titulo = titulo,
         completada = completada
     )
 
     companion object {
-        /** Convierte un modelo de dominio a entidad Room. */
-        fun desdeModelo(tarea: Tarea): TareaEntity = TareaEntity(
+                fun desdeModelo(tarea: Tarea): TareaEntity = TareaEntity(
             id = tarea.id,
             titulo = tarea.titulo,
             completada = tarea.completada

@@ -1,7 +1,3 @@
-// ============================================================
-// TareasViewModel.kt — ViewModel (Presentation Layer)
-// Orquesta el estado de la UI y las operaciones del dominio
-// ============================================================
 package com.example.gestortareaspro.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
@@ -18,7 +14,6 @@ import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
-/** Tipos de filtro para la lista de tareas. */
 enum class FiltroTarea(val etiqueta: String) {
     TODAS("Todas"),
     PENDIENTES("Pendientes"),
@@ -88,8 +83,7 @@ class TareasViewModel(
         initialValue = EstadoPantallaTareas()
     )
 
-    // ── Acciones de la UI ──
-
+    
     fun actualizarTextoNuevaTarea(texto: String) {
         _textoNuevaTarea.value = texto
     }

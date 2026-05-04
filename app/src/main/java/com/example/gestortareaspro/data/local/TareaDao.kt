@@ -1,7 +1,3 @@
-// ============================================================
-// TareaDao.kt — Data Access Object (Data Layer)
-// Operaciones CRUD con Room + Flow reactivo
-// ============================================================
 package com.example.gestortareaspro.data.local
 
 import androidx.room.Dao

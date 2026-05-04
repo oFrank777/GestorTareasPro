@@ -1,7 +1,3 @@
-// ============================================================
-// TareaRepositoryImpl.kt — Implementación del repositorio
-// Conecta Room con el dominio, mapeando Entity <-> Model
-// ============================================================
 package com.example.gestortareaspro.data.repository
 
 import com.example.gestortareaspro.data.local.TareaDao

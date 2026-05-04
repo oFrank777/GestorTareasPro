@@ -1,7 +1,3 @@
-// ============================================================
-// Tarea.kt — Modelo de dominio (Domain Layer)
-// Representa una tarea desacoplada de la capa de datos
-// ============================================================
 package com.example.gestortareaspro.domain.model
 
 /**

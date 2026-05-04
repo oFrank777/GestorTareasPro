@@ -1,7 +1,3 @@
-// ============================================================
-// TareaRepository.kt — Contrato del repositorio (Domain)
-// Define las operaciones sin conocer la implementación
-// ============================================================
 package com.example.gestortareaspro.domain.repository
 
 import com.example.gestortareaspro.domain.model.Tarea

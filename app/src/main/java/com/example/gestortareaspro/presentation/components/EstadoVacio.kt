@@ -1,6 +1,3 @@
-// ============================================================
-// EstadoVacio.kt — Componente para estado vacío elegante
-// ============================================================
 package com.example.gestortareaspro.presentation.components
 
 import androidx.compose.foundation.layout.Arrangement

@@ -1,6 +1,3 @@
-// ============================================================
-// BotonPrimario.kt — Botón reutilizable con estilo premium
-// ============================================================
 package com.example.gestortareaspro.presentation.components
 
 import androidx.compose.foundation.layout.fillMaxWidth

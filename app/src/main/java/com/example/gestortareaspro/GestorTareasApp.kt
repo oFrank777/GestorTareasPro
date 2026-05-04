@@ -1,19 +1,17 @@
-// ============================================================
-// GestorTareasApp.kt — Clase Application personalizada
-// Inicializa las dependencias globales (Room + Preferencias)
-// ============================================================
 package com.example.gestortareaspro
 
 import android.app.Application
 import com.example.gestortareaspro.data.local.PreferenciasManager
 import com.example.gestortareaspro.data.local.TareaDatabase
+import com.example.gestortareaspro.data.repository.HabitoRepositoryImpl
 import com.example.gestortareaspro.data.repository.TareaRepositoryImpl
+import com.example.gestortareaspro.domain.repository.HabitoRepository
 import com.example.gestortareaspro.domain.repository.TareaRepository
 
 /**
  * Application personalizada que actúa como contenedor
  * de dependencias (Service Locator simple).
- * Inicializa Room y el repositorio una única vez.
+ * Inicializa Room y los repositorios una única vez.
  */
 class GestorTareasApp : Application() {
 
@@ -22,9 +20,12 @@ class GestorTareasApp : Application() {
         TareaDatabase.obtenerInstancia(this)
     }
 
-    /** Repositorio de tareas (capa de abstracción sobre Room). */
-    val repositorio: TareaRepository by lazy {
+        val repositorio: TareaRepository by lazy {
         TareaRepositoryImpl(baseDatos.tareaDao())
+    }
+
+        val repositorioHabitos: HabitoRepository by lazy {
+        HabitoRepositoryImpl(baseDatos.habitoDao())
     }
 
     /** Manager de preferencias con DataStore. */

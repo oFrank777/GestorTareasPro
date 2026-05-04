@@ -1,6 +1,3 @@
-// ============================================================
-// Type.kt — Tipografía moderna con fuente del sistema
-// ============================================================
 package com.example.gestortareaspro.core.theme
 
 import androidx.compose.material3.Typography

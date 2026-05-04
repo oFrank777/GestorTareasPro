@@ -1,6 +1,3 @@
-// ============================================================
-// DialogoEdicion.kt — Diálogo para editar títulos de tareas
-// ============================================================
 package com.example.gestortareaspro.presentation.components
 
 import androidx.compose.foundation.layout.fillMaxWidth
