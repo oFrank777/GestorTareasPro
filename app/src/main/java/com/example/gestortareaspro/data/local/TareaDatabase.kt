@@ -15,7 +15,6 @@ import androidx.room.RoomDatabase
  * - [HabitoEntidad]: Tabla de hábitos (con categoría)
  * - [HistorialHabitoEntidad]: Tabla de historial diario de hábitos
  *
- * Versión 3: Agrega columna "categoria" a la tabla habitos.
  */
 @Database(
     entities = [

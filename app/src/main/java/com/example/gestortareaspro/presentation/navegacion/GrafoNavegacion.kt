@@ -110,6 +110,14 @@ fun GrafoNavegacion(
                 // Navegación
                 onNavegarDetalleHabito = { habitoId ->
                     controladorNav.navigate(Rutas.DetalleHabito.crearRuta(habitoId))
+                },
+                onCerrarSesion = {
+                    alcanceCoroutines.launch {
+                        preferencias.cerrarSesion()
+                        controladorNav.navigate(Rutas.Login.ruta) {
+                            popUpTo(Rutas.Inicio.ruta) { inclusive = true }
+                        }
+                    }
                 }
             )
         }

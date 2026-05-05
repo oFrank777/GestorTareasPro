@@ -23,6 +23,7 @@ import androidx.compose.material.icons.filled.LightMode
 import androidx.compose.material.icons.rounded.Add
 import androidx.compose.material.icons.rounded.Checklist
 import androidx.compose.material.icons.rounded.FitnessCenter
+import androidx.compose.material.icons.automirrored.filled.Logout
 import androidx.compose.material3.FilledIconButton
 import androidx.compose.material3.FilledTonalIconButton
 import androidx.compose.material3.FilterChip
@@ -121,7 +122,8 @@ fun PantallaInicio(
     onNavegarDetalleHabito: (Int) -> Unit,
     onMesCalendarioAnterior: () -> Unit,
     onMesCalendarioSiguiente: () -> Unit,
-    onFechaCalendarioSeleccionada: (LocalDate) -> Unit
+    onFechaCalendarioSeleccionada: (LocalDate) -> Unit,
+    onCerrarSesion: () -> Unit
 ) {
     var pestanaSeleccionada by rememberSaveable { mutableIntStateOf(0) }
     var mostrarDialogoNuevoHabito by remember { mutableStateOf(false) }
@@ -186,20 +188,37 @@ fun PantallaInicio(
                     )
                 }
 
-                FilledTonalIconButton(
-                    onClick = onAlternarTema,
-                    shape = RoundedCornerShape(14.dp),
-                    modifier = Modifier.size(48.dp),
-                    colors = IconButtonDefaults.filledTonalIconButtonColors(
-                        containerColor = MaterialTheme.colorScheme.surfaceVariant
-                    )
-                ) {
-                    Icon(
-                        imageVector = if (temaOscuro) Icons.Default.LightMode
-                        else Icons.Default.DarkMode,
-                        contentDescription = "Tema",
-                        tint = MaterialTheme.colorScheme.primary
-                    )
+                Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    FilledTonalIconButton(
+                        onClick = onAlternarTema,
+                        shape = RoundedCornerShape(14.dp),
+                        modifier = Modifier.size(48.dp),
+                        colors = IconButtonDefaults.filledTonalIconButtonColors(
+                            containerColor = MaterialTheme.colorScheme.surfaceVariant
+                        )
+                    ) {
+                        Icon(
+                            imageVector = if (temaOscuro) Icons.Default.LightMode
+                            else Icons.Default.DarkMode,
+                            contentDescription = "Tema",
+                            tint = MaterialTheme.colorScheme.primary
+                        )
+                    }
+
+                    FilledTonalIconButton(
+                        onClick = onCerrarSesion,
+                        shape = RoundedCornerShape(14.dp),
+                        modifier = Modifier.size(48.dp),
+                        colors = IconButtonDefaults.filledTonalIconButtonColors(
+                            containerColor = MaterialTheme.colorScheme.errorContainer.copy(alpha = 0.7f)
+                        )
+                    ) {
+                        Icon(
+                            imageVector = Icons.AutoMirrored.Filled.Logout,
+                            contentDescription = "Cerrar Sesión",
+                            tint = MaterialTheme.colorScheme.error
+                        )
+                    }
                 }
             }
 
